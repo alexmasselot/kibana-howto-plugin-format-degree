@@ -1,25 +1,25 @@
-function TrendProvider(Private) {
+function SimpleFormatDegreeProvider(Private) {
 
   var _ = require('lodash');
   var FieldFormat = Private(require('ui/index_patterns/_field_format/FieldFormat'));
 
   // Create a new FieldFormat type and inherit FieldFormat
-  _.class(Trend).inherits(FieldFormat);
-  function Trend(params) {
-    Trend.Super.call(this, params);
+  _.class(SimpleFormatDegree).inherits(FieldFormat);
+  function SimpleFormatDegree(params) {
+    SimpleFormatDegree.Super.call(this, params);
   }
 
   // The id of this field format
-  Trend.id = 'trend';
+  SimpleFormatDegree.id = 'trend';
   // The title of the field format, shown to the user
-  Trend.title = 'Trend';
+  SimpleFormatDegree.title = 'Trend';
   // An array of types, which this field formatter can be used for.
   // You can only apply this field formatter to fields, that have one
   // of the here specified types. Possible types are:
   // number, boolean, date, ip, attachment, geo_point, geo_shape, string, murmur3
   // murmur3 (Murmur3 plugin hashes), unknown (unknown field type),
   // conflict (fields that have different types in different indices matched by the index pattern)
-  Trend.fieldType = [
+  SimpleFormatDegree.fieldType = [
     'number',
     'percentage'
   ];
@@ -38,7 +38,7 @@ function TrendProvider(Private) {
       This can also be undefined, e.g. when formatting the field in a visualization due to the aggregation
       this information is lost.
   */
-  Trend.prototype._convert = {
+  SimpleFormatDegree.prototype._convert = {
     text: function(value) {
       return value;
     },
@@ -55,8 +55,8 @@ function TrendProvider(Private) {
     }
   };
 
-  return Trend;
+  return SimpleFormatDegree;
 }
 
 // Register the provider to the field_formats registry
-require('ui/registry/field_formats').register(TrendProvider);
+require('ui/registry/field_formats').register(SimpleFormatDegreeProvider);
