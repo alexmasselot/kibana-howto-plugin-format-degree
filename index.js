@@ -1,7 +1,7 @@
 module.exports = function (kibana) {
   return new kibana.Plugin({
 
-    name: 'simple_format_degree',
+    name: 'degree',
     require: ['kibana', 'elasticsearch'],
     uiExports: {
       // fieldFormat is not working as of Kibana 4.3.0, but it's fixed in the master branch
