@@ -10,9 +10,9 @@ function SimpleFormatDegreeProvider(Private) {
   }
 
   // The id of this field format
-  SimpleFormatDegree.id = 'trend';
+  SimpleFormatDegree.id = 'degree';
   // The title of the field format, shown to the user
-  SimpleFormatDegree.title = 'Trend';
+  SimpleFormatDegree.title = 'degree';
   // An array of types, which this field formatter can be used for.
   // You can only apply this field formatter to fields, that have one
   // of the here specified types. Possible types are:
@@ -20,8 +20,7 @@ function SimpleFormatDegreeProvider(Private) {
   // murmur3 (Murmur3 plugin hashes), unknown (unknown field type),
   // conflict (fields that have different types in different indices matched by the index pattern)
   SimpleFormatDegree.fieldType = [
-    'number',
-    'percentage'
+    'number'
   ];
 
   /*
